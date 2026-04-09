@@ -11,15 +11,15 @@ public class Stocking
     int order_id;
     int supplier_id;
     int quantity;
-    String date;
+    String day;
     int product_id;
     
     // Constructor
-    public Stocking(int order_id, int supplier_id, int quantity, String date, int product_id) {
+    public Stocking(int order_id, int supplier_id, int quantity, String day, int product_id) {
         this.order_id = order_id;
         this.supplier_id = supplier_id;
         this.quantity = quantity;
-        this.date = date;
+        this.day = day;
         this.product_id = product_id;
     }
 
@@ -37,8 +37,8 @@ public class Stocking
         return quantity;
     }
 
-    public String getDate() {
-        return date;
+    public String getDay() {
+        return day;
     }
 
     public int getProductId() {
@@ -59,8 +59,8 @@ public class Stocking
         this.quantity = quantity;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setDay(String day) {
+        this.day = day;
     }
 
     public void setProductId(int product_id) {

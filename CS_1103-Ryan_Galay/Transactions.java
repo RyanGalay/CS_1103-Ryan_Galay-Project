@@ -5,20 +5,20 @@
  * Ryan Galay
  * Apr 7 2026
  */
-public class Transaction
+public class Transactions
 {
     // initialize variables
     int transaction_id;
     int employee_id;
     double total_cost;
-    String timestamp;
+    String timestamps;
     
     // Constructor
-    public Transaction(int transaction_id, int employee_id, double total_cost, String timestamp) {
+    public Transactions(int transaction_id, int employee_id, double total_cost, String timestamps) {
         this.transaction_id = transaction_id;
         this.employee_id = employee_id;
         this.total_cost = total_cost;
-        this.timestamp = timestamp;
+        this.timestamps = timestamps;
     }
 
     // Getters
@@ -35,8 +35,8 @@ public class Transaction
         return total_cost;
     }
 
-    public String getTimestamp() {
-        return timestamp;
+    public String getTimestamps() {
+        return timestamps;
     }
 
     // Setters
@@ -53,7 +53,7 @@ public class Transaction
         this.total_cost = total_cost;
     }
 
-    public void setTimestamp(String timestamp) {
-        this.timestamp = timestamp;
+    public void setTimestamps(String timestamps) {
+        this.timestamps = timestamps;
     }
 }
