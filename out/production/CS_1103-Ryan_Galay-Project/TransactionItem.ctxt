@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=TransactionItem
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ TransactionItem\ here.\r\n\r\n\ Ryan\ Galay\r\n\ Apr\ 7\ 2026\r\n
+comment1.params=transaction_id\ product_id\ quantity
+comment1.target=TransactionItem(int,\ int,\ int)
+comment2.params=
+comment2.target=int\ getTransactionId()
+comment3.params=
+comment3.target=int\ getProductId()
+comment4.params=
+comment4.target=int\ getQuantity()
+comment5.params=transaction_id
+comment5.target=void\ setTransactionId(int)
+comment6.params=product_id
+comment6.target=void\ setProductId(int)
+comment7.params=quantity
+comment7.target=void\ setQuantity(int)
+numComments=8

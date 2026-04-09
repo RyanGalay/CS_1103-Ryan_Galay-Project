@@ -1,0 +1,10 @@
+public class TestRunner {
+    public static void main(String[] args) {
+        System.out.println("Starting the test...");
+
+        // This calls your initialization code
+        DatabaseManager.initializeDatabase();
+
+        System.out.println("Test complete!");
+    }
+}
