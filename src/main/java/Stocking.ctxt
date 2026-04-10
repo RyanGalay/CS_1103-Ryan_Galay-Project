@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.target=Stocking
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Stocking\ here.\r\n\r\n\ Ryan\ Galay\r\n\ Apr\ 7\ 2026\r\n
+comment1.params=order_id\ supplier_id\ quantity\ day\ product_id
+comment1.target=Stocking(int,\ int,\ int,\ java.lang.String,\ int)
+comment10.params=day
+comment10.target=void\ setDay(java.lang.String)
+comment11.params=product_id
+comment11.target=void\ setProductId(int)
+comment2.params=
+comment2.target=int\ getOrderId()
+comment3.params=
+comment3.target=int\ getSupplierId()
+comment4.params=
+comment4.target=int\ getQuantity()
+comment5.params=
+comment5.target=java.lang.String\ getDay()
+comment6.params=
+comment6.target=int\ getProductId()
+comment7.params=order_id
+comment7.target=void\ setOrderId(int)
+comment8.params=supplier_id
+comment8.target=void\ setSupplierId(int)
+comment9.params=quantity
+comment9.target=void\ setQuantity(int)
+numComments=12
