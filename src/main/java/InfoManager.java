@@ -58,6 +58,7 @@ public class InfoManager
             pstmt.setString(3, title);
             pstmt.setDouble(4, salary);
             pstmt.setString(5, permissions);
+            pstmt.executeUpdate();
         } catch (Exception e) { e.printStackTrace(); }
     }
 

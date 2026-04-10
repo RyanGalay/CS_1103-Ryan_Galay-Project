@@ -22,6 +22,10 @@ public class Insert
         InfoManager.addProduct(101, "Honeycrisp Apple", 1.50, 1);
         InfoManager.addProduct(102, "Whole Milk", 3.99, 2);
         InfoManager.addProduct(103, "Sourdough Bread", 5.00, 3);
+        InfoManager.addProduct(104, "White Bread", 5.00, 3);
+
+        // create employee
+        InfoManager.addEmployee(1, "John Leader", "Owner", 150000, "Manager");
 
         System.out.println("Base information created");
     }
