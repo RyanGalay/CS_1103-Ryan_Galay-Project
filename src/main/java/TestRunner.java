@@ -4,6 +4,7 @@ public class TestRunner {
 
         // This calls your initialization code
         DatabaseManager.initializeDatabase();
+        Insert.seed();
 
         System.out.println("Test complete!");
     }
