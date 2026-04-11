@@ -8,16 +8,16 @@ import java.util.Scanner;
  * Apr 10 2026
  */
 
-public class Console
-{
+public class Console {
     private static final String URL = "jdbc:sqlite:inventory.db";
     static boolean cont = true;
     static Scanner scan = new Scanner(System.in);
     static int selection;
+    static Employee tempEmp;
+    static int tempin;
 
-    public static void main(String[] args)
-    {
-        System.out.println("Please enter your employee id: (1 for all functions)");
+    public static void main(String[] args) {
+        System.out.println("Please enter your employee id: (1 for Manager, 2 for Employee)");
         int check = scan.nextInt();
         String sqlLogin = ("SELECT * FROM Employees WHERE employee_id = ?");
 
@@ -36,6 +36,12 @@ public class Console
                     // Retrieve values by column name
 
                     int employee_id = rs.getInt("employee_id");
+                    String full_name = rs.getString("full_name");
+                    String title = rs.getString("title");
+                    double salary = rs.getDouble("salary");
+                    String permissions = rs.getString("permissions");
+
+                    tempEmp = new Employee(employee_id, full_name, title, salary, permissions);
 
                 } else {
                     System.out.println("No record found with ID: " + check);
@@ -45,35 +51,99 @@ public class Console
             System.err.println("Database error: " + e.getMessage());
         }
 
-        while (cont)
+        if ((tempEmp.permissions).equals("Employee"))
         {
-            System.out.println("Employee, choose function:");
-            System.out.println();
-            System.out.println("1.)");
-            System.out.println("2.)");
-            System.out.println("3.)");
-            System.out.println("4.) close program");
-            selection = scan.nextInt();
-
-            if (selection == 4){
-                cont = false;
-            }
-
-            while (cont)
-            {
+            while (cont) {
                 System.out.println("Employee, choose function:");
                 System.out.println();
-                System.out.println("1.)");
-                System.out.println("2.)");
-                System.out.println("3.)");
+                System.out.println("1.) Purchase Order");
+                System.out.println("2.) View products");
                 System.out.println("4.) close program");
                 selection = scan.nextInt();
 
-                if (selection == 4){
+                if (selection == 3)
+                {
                     cont = false;
+                } else if (selection == 1)
+                {
+                    purchaseOrder();
+                } else if (selection == 2)
+                {
+                    View();
                 }
+            }
         }
+
+        if ((tempEmp.permissions).equals("Manager")){
+            while (cont) {
+                System.out.println("Manager, choose function:");
+                System.out.println();
+                System.out.println("1.) Purchase Order");
+                System.out.println("2.) Add");
+                System.out.println("3.) Delete");
+                System.out.println("4.) View products");
+                System.out.println("5.) Restock");
+                System.out.println("6.) close program");
+                selection = scan.nextInt();
+
+                if (selection == 6)
+                {
+                    cont = false;
+                } else if (selection == 1)
+                {
+                    purchaseOrder();
+                } else if (selection == 2)
+                {
+                    Add();
+                } else if (selection == 3)
+                {
+                    Delete();
+                } else if (selection == 4)
+                {
+                    View();
+                } else if (selection == 5)
+                {
+                    Restock();
+                }
+            }
+        }
+
         // close scanner
         scan.close();
+    }
+
+    private static void purchaseOrder()
+    {
+        boolean loop = true;
+        while (loop) {
+            System.out.println("Enter the product id, or 0 to complete order");
+            tempin = scan.nextInt();
+
+            if(tempin == 0){
+                loop = false;
+            } else {
+                // this should accept the product id and use it to add a product to the order
+            }
+        }
+    }
+
+    private static void Add()
+    {
+        // this method will allow the user to add things like products, categories, employees, and suppliers
+    }
+
+    private static void Delete()
+    {
+        // this method will allow the user to remove products, categories, employees, suppliers, and transactions
+    }
+
+    private static void View()
+    {
+        // this method will allow the user to view the product table
+    }
+
+    private static void Restock()
+    {
+        // this method should allow the user to select a supplier and purchase items from them, it does not affect anything really though
     }
 }

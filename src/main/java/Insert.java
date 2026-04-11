@@ -13,7 +13,7 @@ public class Insert
     private static final String URL = "jdbc:sqlite:inventory.db";
 
     public static void seed() {
-        // create catagories
+        // create categories
         InfoManager.addCategory(1, "Produce");
         InfoManager.addCategory(2, "Dairy");
         InfoManager.addCategory(3, "Bakery");
@@ -26,6 +26,7 @@ public class Insert
 
         // create employee
         InfoManager.addEmployee(1, "John Leader", "Owner", 150000, "Manager");
+        InfoManager.addEmployee(2, "Jake Follower", "Cashier", 2, "Employee");
 
         System.out.println("Base information created");
     }
